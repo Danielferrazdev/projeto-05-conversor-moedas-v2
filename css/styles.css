@@ -29,6 +29,7 @@ body {
 }
 
 main {
+    user-select: none; /*IMPEDI SELECIONAR O TEXTO DO SITE*/
     background-color: rgba(248, 245, 245, 0.9);
     width: 375px;
     border-radius: 10px;
