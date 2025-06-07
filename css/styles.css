@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: blueviolet;
-    /*background: linear-gradient(
+ 
+    background: linear-gradient(
     rgba(255,255,255,0.1),
     rgba(0,0,0,1)
     ), url(https://images.unsplash.com/photo-1550565118-3a14e8d0386f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
@@ -16,9 +16,10 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    */
+    
 }
 
 .gif-conversor {
@@ -46,8 +47,8 @@ label {
 
 select, input{
     background: #FFFFFF;
-    border: 1px solid #BBBBBB;
-    border-radius: 4px;
+    border: 1px solid #ccc;      /* Borda leve */
+    border-radius: 8px;          /* Cantos arredondados */
     height: 48px;
     width: 100%;
     margin-bottom: 5px;
@@ -57,6 +58,41 @@ select, input{
     font-weight: 700;
     font-size: 16px;
 }
+.currency-origem {
+    background-color: #a9e6ae;
+}
+
+.currency-select {
+    background-color: #f0f0f0;   /* Cor de fundo */
+    /*criação da seta do lado direito*/
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23666' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* Posição da setinha */
+    background-size: 12px;
+  }
+  
+
+.input-money::placeholder {
+    color: #10a040; /* Escolha a cor desejada */
+  }
+  
+  /* Compatibilidade com navegadores mais antigos */
+  .input-money::-webkit-input-placeholder {
+    color: #c2c2c2;
+  }
+  
+  .input-money:-moz-placeholder {
+    color: #c2c2c2;
+  }
+  
+  .input-money::-moz-placeholder {
+    color: #c2c2c2;
+  }
+  
+  .input-money:-ms-input-placeholder {
+    color: #c2c2c2;;
+  }
+  
 
 button {
     width: 100%;
@@ -85,7 +121,6 @@ button:active {
     border: 1px solid #772FD3;
     border-radius: 20px;
     margin-top: 20px;
-    /*text-align: center;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,6 +149,7 @@ text-align: center;
 .seta-conversao {
     display: flex;
     align-items: center;
+    width: 25%;
 }
 .mensagem-erro {
     display: none;
