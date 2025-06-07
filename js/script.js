@@ -6,11 +6,13 @@ function convertValues() {
     const inputMoneyValue = document.querySelector(".input-money").value
 
     const valorEntrada = document.querySelector(".valor-entrada") //valor em Real
-    const valorSaida = document.querySelector(".valor-saida") //valor em Dólar
+    const valorSaida = document.querySelector(".valor-saida")
     const erro = document.getElementById('mensagemErro');
 
     const dolarToDay = 5.2
     const euroToDay = 6.2
+    const dirhamToday = 0.61
+
     // vai verificar se no campo valor "converter de" se colocou uma nfmação válida (não pode ser em branco ou letras)
     if (isNaN(inputMoneyValue) || inputMoneyValue.trim() === "" || Number(inputMoneyValue) <= 0) {
         // Mostra a mensagem na tela
@@ -37,6 +39,13 @@ function convertValues() {
             currency: "EUR"
         }).format(inputMoneyValue / euroToDay)
     }
+    
+    if (currencySelect.value == "Dirham") {
+        valorSaida.innerHTML = new Intl.NumberFormat("fr-MA", {
+            style: "currency",
+            currency: "MAD"
+        }).format(inputMoneyValue / dirhamToday)
+    }
 
     valorEntrada.innerHTML = new Intl.NumberFormat("pt-br", {
         style: "currency",
@@ -58,6 +67,10 @@ function trocarImgMoeda() {
     if (currencySelect.value == "Euro") {
         moedaSaida.innerHTML = "Euro"
         bandeiraMoeda.src = "./assets/logo-euro.png"
+    }
+    if (currencySelect.value == "Dirham") {
+        moedaSaida.innerHTML = "Dirham marroquino"
+        bandeiraMoeda.src = "./assets/logo-dirham.png"
     }
     convertValues()
 }
